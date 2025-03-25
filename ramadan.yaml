@@ -207,6 +207,21 @@ paths:
                     items:
                       type: string
 
+  /ramadan/quotes/random:
+    get:
+      summary: Get a random inspirational quote
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: A single inspirational quote
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  quote:
+                    type: string
 
 components:
   securitySchemes:
