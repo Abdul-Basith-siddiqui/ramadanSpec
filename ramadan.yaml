@@ -189,6 +189,25 @@ paths:
                     items:
                       type: string
 
+  /ramadan/dua:
+    get:
+      summary: Get daily Ramadan duas (supplications)
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of daily duas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  duas:
+                    type: array
+                    items:
+                      type: string
+
+
 components:
   securitySchemes:
     bearerAuth:
