@@ -135,6 +135,25 @@ paths:
                   prayers:
                     type: string
 
+  /ramadan/good-deeds:
+    get:
+      summary: Get daily good deeds for Ramadan
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of daily good deeds
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deeds:
+                    type: array
+                    items:
+                      type: string
+
+
 components:
   securitySchemes:
     bearerAuth:
