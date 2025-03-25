@@ -171,6 +171,23 @@ paths:
                     items:
                       type: string
 
+  /ramadan/tips:
+    get:
+      summary: Get daily fasting tips
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of tips for healthy and spiritual fasting
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tips:
+                    type: array
+                    items:
+                      type: string
 
 components:
   securitySchemes:
