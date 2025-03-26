@@ -208,43 +208,67 @@ paths:
                       type: string
 
 /ramadan/calendar:
+  get:
+    summary: Get important dates during Ramadan
+    security:
+      - bearerAuth: []
+    responses:
+      "200":
+        description: List of key events and dates in Ramadan
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                calendar:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      day:
+                        type: integer
+                      event:
+                        type: string
+  /ramadan/zakat:
     get:
-      summary: Get important dates during Ramadan
+      summary: Learn about Zakat al-Fitr
       security:
         - bearerAuth: []
       responses:
         "200":
-          description: List of key events and dates in Ramadan
+          description: Zakat al-Fitr details
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  calendar:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        day:
-                          type: integer
-                        event:
-                          type: string
-                        
+                  zakat:
+                    type: object
+                    properties:
+                      purpose:
+                        type: string
+                      amount:
+                        type: string
+                      deadline:
+                        type: string
+                      recipients:
+                        type: string
+
 /ramadan/history:
-    get:
-      summary: Learn about the historical background of Ramadan
-      security:
-        - bearerAuth: []
-      responses:
-        "200":
-          description: History of Ramadan
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  history:
-                    type: string
+  get:
+    summary: Learn about the historical background of Ramadan
+    security:
+      - bearerAuth: []
+    responses:
+      "200":
+        description: History of Ramadan
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                history:
+                  type: string
 
 components:
   securitySchemes:
