@@ -207,6 +207,28 @@ paths:
                     items:
                       type: string
 
+/ramadan/calendar:
+    get:
+      summary: Get important dates during Ramadan
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of key events and dates in Ramadan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  calendar:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        day:
+                          type: integer
+                        event:
+                          type: string
 
 components:
   securitySchemes:
