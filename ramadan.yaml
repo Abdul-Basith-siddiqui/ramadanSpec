@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Ramadan REST API
-  version: 1.0.2 #1 endpoints added
+  version: 1.0.2
   description: A simple API that provides information about Ramadan, protected by JWT bearer tokens.
 
 servers:
@@ -119,6 +119,7 @@ paths:
                 properties:
                   suhoor:
                     type: string
+
   /ramadan/prayers:
     get:
       summary: Get info about Taraweeh prayers
@@ -207,28 +208,29 @@ paths:
                     items:
                       type: string
 
-/ramadan/calendar:
-  get:
-    summary: Get important dates during Ramadan
-    security:
-      - bearerAuth: []
-    responses:
-      "200":
-        description: List of key events and dates in Ramadan
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                calendar:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      day:
-                        type: integer
-                      event:
-                        type: string
+  /ramadan/calendar:
+    get:
+      summary: Get important dates during Ramadan
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: List of key events and dates in Ramadan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  calendar:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        day:
+                          type: integer
+                        event:
+                          type: string
+
   /ramadan/zakat:
     get:
       summary: Learn about Zakat al-Fitr
@@ -254,21 +256,21 @@ paths:
                       recipients:
                         type: string
 
-/ramadan/history:
-  get:
-    summary: Learn about the historical background of Ramadan
-    security:
-      - bearerAuth: []
-    responses:
-      "200":
-        description: History of Ramadan
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                history:
-                  type: string
+  /ramadan/history:
+    get:
+      summary: Learn about the historical background of Ramadan
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: History of Ramadan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  history:
+                    type: string
 
 components:
   securitySchemes:
