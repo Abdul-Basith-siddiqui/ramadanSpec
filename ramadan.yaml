@@ -229,6 +229,22 @@ paths:
                           type: integer
                         event:
                           type: string
+                        
+/ramadan/history:
+    get:
+      summary: Learn about the historical background of Ramadan
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: History of Ramadan
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  history:
+                    type: string
 
 components:
   securitySchemes:
