@@ -317,6 +317,51 @@ paths:
                   pong:
                     type: boolean
                     example: true
+  /payment:
+    get:
+      summary: payment endpoint
+      description: payment service is alive.
+      responses:
+        "200":
+          description: Pong response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pong:
+                    type: boolean
+                    example: true       
+  /billing/update:
+    get:
+      summary: payment endpoint
+      description: payment service is alive.
+      responses:
+        "200":
+          description: Pong response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pong:
+                    type: boolean
+                    example: true     
+  /settlement:
+    get:
+      summary: payment endpoint
+      description: payment service is alive.
+      responses:
+        "200":
+          description: Pong response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pong:
+                    type: boolean
+                    example: true                                              
 
 components:
   securitySchemes:
