@@ -302,7 +302,21 @@ paths:
                   pong:
                     type: boolean
                     example: true
-
+  /invalid:
+    head:
+      summary: Ping endpoint
+      description: awdf service is alive.
+      responses:
+        "200":
+          description: Pong response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pong:
+                    type: boolean
+                    example: true
 
 components:
   securitySchemes:
