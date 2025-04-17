@@ -272,6 +272,37 @@ paths:
                 properties:
                   message:
                     type: string                   
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns service health status.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "ok"
+  /testhe:
+    get:
+      summary: Ping endpoint
+      description: Basic ping to check if service is alive.
+      responses:
+        "200":
+          description: Pong response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pong:
+                    type: boolean
+                    example: true
+
 
 components:
   securitySchemes:
