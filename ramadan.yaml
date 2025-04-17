@@ -8,7 +8,7 @@ servers:
   - url: https://ramadandynamic.onrender.com
 
 paths:
-  /login:
+  /loginuser:
     post:
       summary: Get JWT token
       requestBody:
@@ -246,7 +246,7 @@ paths:
                 properties:
                   history:
                     type: string
-  /logout:
+  /logout123:
     get:  
       summary: Logout user
       responses:
@@ -259,7 +259,7 @@ paths:
                 properties:
                   message:
                     type: string
-  /deauthenticate:
+  /logoutuser:
     get:  
       summary: Logout user
       responses:
