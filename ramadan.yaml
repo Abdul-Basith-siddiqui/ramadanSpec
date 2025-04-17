@@ -246,6 +246,32 @@ paths:
                 properties:
                   history:
                     type: string
+  /logout:
+    get:  
+      summary: Logout user
+      responses:
+        "200":
+          description: Logout successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+  /deauthenticate:
+    get:  
+      summary: Logout user
+      responses:
+        "200":
+          description: Logout successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string                   
 
 components:
   securitySchemes:
